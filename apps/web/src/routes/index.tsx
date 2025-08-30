@@ -40,9 +40,9 @@ import { authClient } from "@/lib/auth-client";
 export const Route = createFileRoute("/")({
   component: HomeComponent,
   beforeLoad: async () => {
-    const session = await authClient.getSession();
-    if (!session) {
-      redirect({
+    const { data } = await authClient.getSession();
+    if (!data?.user) {
+      throw redirect({
         to: "/login",
       });
     }
