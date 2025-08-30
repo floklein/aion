@@ -1,10 +1,11 @@
 {
   "name": "aion",
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "@biomejs/biome": "^2.2.0"
+  },
+  "packageManager": "bun@1.2.21",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "check": "biome check --write .",
     "ruler:apply": "bunx @intellectronica/ruler@latest apply --local-only",
@@ -23,10 +24,8 @@
     "db:stop": "turbo -F server db:stop",
     "db:down": "turbo -F server db:down"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "turbo": "^2.5.4",
-    "@biomejs/biome": "^2.2.0"
-  },
-  "packageManager": "bun@1.2.21"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
