@@ -1,19 +1,21 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState } from "react";
+import z from "zod";
 import SignInForm from "@/components/sign-in-form";
 import SignUpForm from "@/components/sign-up-form";
-import { authClient } from "@/lib/auth-client";
 
 export const Route = createFileRoute("/login")({
   component: RouteComponent,
-  beforeLoad: async () => {
-    const { data } = await authClient.getSession();
-    if (data?.user) {
+  beforeLoad: async ({ context, search }) => {
+    if (context.isAuthenticated) {
       throw redirect({
-        to: "/",
+        to: search.redirect || "/",
       });
     }
   },
+  validateSearch: z.object({
+    redirect: z.string().optional(),
+  }),
 });
 
 function RouteComponent() {
