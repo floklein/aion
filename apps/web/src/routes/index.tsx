@@ -35,15 +35,16 @@ import {
   SourcesContent,
   SourcesTrigger,
 } from "@/components/sources";
-import { authClient } from "@/lib/auth-client";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
-  beforeLoad: async () => {
-    const { data } = await authClient.getSession();
-    if (!data?.user) {
+  beforeLoad: async ({ context }) => {
+    if (!context.isAuthenticated) {
       throw redirect({
         to: "/login",
+        search: {
+          redirect: "/",
+        },
       });
     }
   },

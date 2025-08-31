@@ -2,9 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { ModeToggle } from "./mode-toggle";
 import UserMenu from "./user-menu";
 
-export default function Header() {
-  const links = [{ to: "/", label: "Home" }] as const;
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/settings", label: "Settings" },
+] as const;
 
+export default function Header() {
   return (
     <div>
       <div className="flex flex-row items-center justify-between px-2 py-1">

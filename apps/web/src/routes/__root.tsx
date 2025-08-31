@@ -11,7 +11,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import "../index.css";
 
-export type RouterAppContext = {};
+export type RouterAppContext = {
+  isAuthenticated: boolean;
+};
 
 export const Route = createRootRouteWithContext<RouterAppContext>()({
   component: RootComponent,
