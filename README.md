@@ -15,14 +15,14 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **Authentication** - Better-Auth
 - **Turborepo** - Optimized monorepo build system
 - **Biome** - Linting and formatting
-- **Tauri** - Build native desktop applications
+- **Electron** - Build native desktop applications
 
 ## Getting Started
 
 First, install the dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 ## Database Setup
 
@@ -33,14 +33,14 @@ This project uses PostgreSQL with Drizzle ORM.
 
 3. Apply the schema to your database:
 ```bash
-bun db:push
+pnpm run db:push
 ```
 
 
 Then, run the development server:
 
 ```bash
-bun dev
+pnpm run dev
 ```
 
 Open [http://localhost:3001](http://localhost:3001) in your browser to see the web application.
@@ -55,19 +55,17 @@ The API is running at [http://localhost:3000](http://localhost:3000).
 ```
 aion/
 ├── apps/
-│   ├── web/         # Frontend application (React + TanStack Router)
+│   ├── desktop/         # Frontend application (React + TanStack Router)
 │   └── server/      # Backend API (Next)
 ```
 
 ## Available Scripts
 
-- `bun dev`: Start all applications in development mode
-- `bun build`: Build all applications
-- `bun dev:web`: Start only the web application
-- `bun dev:server`: Start only the server
-- `bun check-types`: Check TypeScript types across all apps
-- `bun db:push`: Push schema changes to database
-- `bun db:studio`: Open database studio UI
-- `bun check`: Run Biome formatting and linting
-- `cd apps/web && bun desktop:dev`: Start Tauri desktop app in development
-- `cd apps/web && bun desktop:build`: Build Tauri desktop app
+- `pnpm run dev`: Start all applications in development mode
+- `pnpm run build`: Build all applications
+- `pnpm run dev:desktop`: Start only the web application
+- `pnpm run dev:server`: Start only the server
+- `pnpm run check-types`: Check TypeScript types across all apps
+- `pnpm run db:push`: Push schema changes to database
+- `pnpm run db:studio`: Open database studio UI
+- `pnpm run check`: Run Biome formatting and linting
