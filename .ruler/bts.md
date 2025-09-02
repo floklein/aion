@@ -6,25 +6,25 @@ This is a aion project created with Better-T-Stack CLI.
 
 This is a monorepo with the following structure:
 
-- **`apps/web/`** - Frontend application (React with TanStack Router)
+- **`apps/desktop/`** - Frontend application (React with TanStack Router)
 
 - **`apps/server/`** - Backend server (Next.js API)
 
 
 ## Available Scripts
 
-- `bun run dev` - Start all apps in development mode
-- `bun run dev:web` - Start only the web app
-- `bun run dev:server` - Start only the server
+- `pnpm run dev` - Start all apps in development mode
+- `pnpm run dev:desktop` - Start only the desktop app
+- `pnpm run dev:server` - Start only the server
 
 ## Database Commands
 
 All database operations should be run from the server workspace:
 
-- `bun run db:push` - Push schema changes to database
-- `bun run db:studio` - Open database studio
-- `bun run db:generate` - Generate Drizzle files
-- `bun run db:migrate` - Run database migrations
+- `pnpm run db:push` - Push schema changes to database
+- `pnpm run db:studio` - Open database studio
+- `pnpm run db:generate` - Generate Drizzle files
+- `pnpm run db:migrate` - Run database migrations
 
 Database schema files are located in `apps/server/src/db/schema/`
 
@@ -33,14 +33,14 @@ Database schema files are located in `apps/server/src/db/schema/`
 
 Authentication is enabled in this project:
 - Server auth logic is in `apps/server/src/lib/auth.ts`
-- Web app auth client is in `apps/web/src/lib/auth-client.ts`
+- Desktop app auth client is in `apps/desktop/src/lib/auth-client.ts`
 
 ## Adding More Features
 
 You can add additional addons or deployment options to your project using:
 
 ```bash
-bunx create-better-t-stack
+pnpx create-better-t-stack
 add
 ```
 
@@ -62,10 +62,9 @@ This project includes a `bts.jsonc` configuration file that stores your Better-T
 
 ## Key Points
 
-- This is a Turborepo monorepo using bun workspaces
+- This is a Turborepo monorepo using pnpm workspaces
 - Each app has its own `package.json` and dependencies
 - Run commands from the root to execute across all workspaces
-- Run workspace-specific commands with `bun run command-name`
+- Run workspace-specific commands with `pnpm run command-name`
 - Turborepo handles build caching and parallel execution
-- Use `bunx
-create-better-t-stack add` to add more features later
+- Use `pnpx create-better-t-stack add` to add more features later
