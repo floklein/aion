@@ -1,3 +1,14 @@
-[mcp_servers.context7]
-command = "npx"
-args = [ "-y", "@upstash/context7-mcp" ]
+
+[plugins."nextjs@nextjs"]
+enabled = true
+
+[plugins."auth-skills@better-auth-agent-skills"]
+enabled = true
+
+[marketplaces.nextjs]
+source_type = "git"
+source = "https://github.com/vercel/next.js.git"
+
+[marketplaces.better-auth-agent-skills]
+source_type = "git"
+source = "https://github.com/better-auth/skills.git"

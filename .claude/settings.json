@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "nextjs@nextjs": true,
+    "auth-skills@better-auth-agent-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "nextjs": {
+      "source": {
+        "source": "github",
+        "repo": "vercel/next.js"
+      }
+    },
+    "better-auth-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "better-auth/skills"
+      }
+    }
+  }
+}
